@@ -4,7 +4,7 @@ from rest_framework import serializers
 class CarreraSerializer(serializers.ModelSerializer):
     class Meta:
         model=Carrera
-        fields = ('nombreCarrera' , 'numeroCiclos' , 'numeroCrditos' , ' codigoCarrera' , 'numeroDocentes')
+        fields = ('nombreCarrera' , 'numeroCiclos' , 'numeroCreditos' , 'codigoCarrera' , 'numeroDocentes')
 
 class ParaleloSerializer(serializers.ModelSerializer):    
     class Meta:
