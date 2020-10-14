@@ -1,0 +1,1 @@
+web: gunicorn appBury.wsgi --log-file -
