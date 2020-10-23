@@ -1,17 +1,21 @@
 # Create your views here.
 from django.http import HttpResponse
 
-from pruebaapp.models import Carrera,Paralelo
+from pruebaapp.models import Cliente,Producto,Proveedor
 from rest_framework import viewsets
-from pruebaapp.serializers import CarreraSerializer,ParaleloSerializer
+from pruebaapp.serializers import ClienteSerializer,ProductoSerializer,ProveedorSerializer
 
-class CarreraViewSet(viewsets.ModelViewSet):
-    queryset=Carrera.objects.all().order_by('nombreCarrera')
-    serializer_class=CarreraSerializer
+class ClienteViewSet(viewsets.ModelViewSet):
+    queryset=Cliente.objects.all().order_by('nombreCliente')
+    serializer_class=ClienteSerializer
 
-class ParaleloViewSet(viewsets.ModelViewSet):
-    queryset=Paralelo.objects.all().order_by('nombre')
-    serializer_class=ParaleloSerializer
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset=Producto.objects.all().order_by('nombre')
+    serializer_class=ProductoSerializer
+
+class ProveedorViewSet(viewsets.ModelViewSet):
+    queryset=Proveedor.objects.all().order_by('nombreProveedor')
+    serializer_class=ProveedorSerializer
 
 def index(request):
-    return HttpResponse("Hola mundo, es mi primera app de prueba en Django soy Jonathan Buri")
+    return HttpResponse("En esta aplicacion se vendran productos de buena calidad sin riesgo a contagio del Covid")

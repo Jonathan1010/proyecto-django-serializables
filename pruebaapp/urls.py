@@ -5,8 +5,9 @@ from django.conf.urls import include,url
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('carreras',views.CarreraViewSet)
-router.register(r'paralelos',views.ParaleloViewSet)
+router.register(r'cliente',views.ClienteViewSet)
+router.register(r'producto',views.ProductoViewSet)
+router.register(r'proveedor',views.ProveedorViewSet)
 
 urlpatterns = [
     path('',views.index, name='index'),

@@ -1,12 +1,17 @@
-from pruebaapp.models import Carrera,Paralelo
+from pruebaapp.models import Cliente,Producto,Proveedor
 from rest_framework import serializers
 
-class CarreraSerializer(serializers.ModelSerializer):
+class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Carrera
-        fields = ('nombreCarrera' , 'numeroCiclos' , 'numeroCreditos' , 'codigoCarrera' , 'numeroDocentes')
+        model=Cliente
+        fields = ('idCliente' , 'nombreCliente' , 'apellidoCliente' , 'numeroCelular' , 'direccion')
 
-class ParaleloSerializer(serializers.ModelSerializer):    
+class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Paralelo
-        fields=('carrera' , 'ciclo' , 'nombre' , 'numeroEstudiantes')
+        model=Producto
+        fields = ('idProducto' , 'nombre' , 'tipoproducto' , 'precio' , 'totalcantidad')
+
+class ProveedorSerializer(serializers.ModelSerializer):    
+    class Meta:
+        model=Proveedor
+        fields=('idProveedor' , 'nombreProveedor' , 'apellidoProveedor' , 'numeroCelular','direccion')
